@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Weather</title>
+  </head>
+  <body style="background-color: #6bc4dd; overflow: hidden">
+    <div
+      style="
+        min-width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <div style="display: flex; gap: 60px; flex-wrap: wrap">
+        <img
+          src="https://i.gifer.com/6Bc.gif"
+          alt="Малюнок погоди"
+          width="500px"
+          height="280px"
+          style="
+            border-radius: 20px;
+            object-fit: cover;
+            border: 5px solid white;
+          "
+        />
+        <div>
+          <h1
+            style="font-size: 4rem; color: white; letter-spacing: 0; margin: 0"
+          >
+            {{uk_city_name}}
+          </h1>
+          <p style="font-size: 30px; color: white">{{data.description}}</p>
+          <ul style="margin: 20px 0 0 0; padding: 0">
+            {% for info in weather_info %}
+            <li
+              style="
+                list-style-type: none;
+                padding: 5px 0;
+                margin: 0;
+                color: white;
+              "
+            >
+              {{ info.name }}:
+              <span style="font-size: 24px">{{ info.value }}</span>
+              {{ info.unit }}
+            </li>
+            {% endfor %}
+          </ul>
+          <a
+            href="/"
+            style="
+              text-decoration: none;
+              color: white;
+              font-white: bold;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: rgba(255, 255, 255, 0.3);
+              border-radius: 5px;
+              padding: 8px 25px;
+              margin-top: 20px;
+              font-size: 20px;
+            "
+            >Повернутися на головну</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
